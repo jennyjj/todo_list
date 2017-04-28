@@ -36,7 +36,7 @@ def display_main_menu(my_list):
     
 
     while True:
-        user_input = raw_input(user_options)
+        user_input = (raw_input(user_options)).upper()
         # Collect input and include your if/elif/else statements here.
         if user_input == "A":
             add_to_list(my_list)
