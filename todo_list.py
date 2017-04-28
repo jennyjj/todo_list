@@ -31,10 +31,17 @@ def display_main_menu(my_list):
     C. Quit the program
     >>> """
 
-    while True:
-        # Collect input and include your if/elif/else statements here.
-        break
+    
 
+    while True:
+        user_input = raw_input(user_options)
+        # Collect input and include your if/elif/else statements here.
+        if user_input == "A":
+            add_to_list(my_list)
+        elif user_input == "B":
+            view_list(my_list)
+        else user_input == "C":
+            break
 #-------------------------------------------------
 
 my_list = []
