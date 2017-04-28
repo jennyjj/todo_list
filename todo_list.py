@@ -22,7 +22,19 @@ def view_list(my_list):
     for item in range(len(my_list)):
         print my_list[item]
 
+def delete_from_beginning_of_list(my_list):
+    del my_list[0]
 
+def add_to_list_at_an_index(my_list):
+    item = raw_input("What would you like to add to the list? ")
+    location = int(raw_input("At which index do you want to add your item? "))    
+    my_list.insert(location, item)
+
+def edit_an_item_at_an_index(my_list):
+    location = int(raw_input("At which index do you want to edit? "))
+    edit = raw_input("What is the edited version of the item? ")
+    my_list[location] = edit
+    
 def display_main_menu(my_list):
     """Displays main options, takes in user input, and calls view or add function."""
 
@@ -30,7 +42,10 @@ def display_main_menu(my_list):
     \nWould you like to:
     A. Add a new item
     B. View list
-    C. Quit the program
+    C. Delete from beginning of list
+    D. Add to list at an index
+    E. Edit an item at an index
+    F. Quit the program
     >>> """
 
     
@@ -43,7 +58,15 @@ def display_main_menu(my_list):
         elif user_input == "B":
             view_list(my_list)
         elif user_input == "C":
+            delete_from_beginning_of_list(my_list)
+        elif user_input == "D":
+            add_to_list_at_an_index(my_list)
+        elif user_input == "E":
+            edit_an_item_at_an_index(my_list)
+        elif user_input == "F":
             break
+        else:
+            print "Sorry, you need to type in a valid option.  Try again."
 #-------------------------------------------------
 
 my_list = []
