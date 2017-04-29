@@ -13,8 +13,13 @@ def add_to_list(my_list):
     """Takes user input and adds it as a new item to the end of the list."""
 
     item = raw_input("What would you like to add to the list?")
-    my_list.append(item)
-
+    if len(my_list) == 0:
+        my_list.append(item)
+    for i in my_list:
+        if i == item:
+            print "You already have that item. Pick another item."
+        else:
+            my_list.append(item)
 
 def view_list(my_list):
     """Print each item in the list."""
@@ -23,7 +28,10 @@ def view_list(my_list):
         print my_list[item]
 
 def delete_from_beginning_of_list(my_list):
-    del my_list[0]
+    if len(my_list) == 0:
+        print "There is nothing to delete. Add some items first."
+    else:
+        del my_list[0]
 
 def add_to_list_at_an_index(my_list):
     item = raw_input("What would you like to add to the list? ")
